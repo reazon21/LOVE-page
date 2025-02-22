@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сюрприз для тебя ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #ffdde1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        .message {
+            position: absolute;
+            color: #ff4081;
+            font-size: 24px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">❤️ Люблю Тебя моя принцесса Эльнура ❤️</div>
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            document.body.appendChild(heart);let x = Math.random() * window.innerWidth;
+        let duration = Math.random() * 3 + 2;
+        heart.style.left = `${x}px`;
+        heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+        heart.style.animationDuration = `${duration}s`;
+        
+        setTimeout(() => heart.remove(), duration * 1000);
+    }
+    setInterval(createHeart, 100);
+</script>
+
+</body>
+</html>
